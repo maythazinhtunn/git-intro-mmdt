@@ -19,4 +19,4 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Print Secrets
-        run: echo ${{ secrets.WEATHER-API-KEY }}
+        run: echo ${{ secrets.WEATHER_KEY }}
