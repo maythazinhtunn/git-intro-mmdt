@@ -117,6 +117,7 @@ def transform_data():
 
 def load_data(df:pd.DataFrame):
     db_path = os.getenv("sqlite", "week9_demo/mmdt.db")
+    os.makedirs(os.path.dirname(db_path), exist_ok=True)
     db_url = "sqlite:///" + os.path.abspath(db_path)
     # db_url = "sqlite:///" + os.path.abspath(db_path)
     print(f"Db url - {db_url}")
