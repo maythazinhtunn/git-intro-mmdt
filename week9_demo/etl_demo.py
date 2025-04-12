@@ -116,8 +116,9 @@ def transform_data():
     
 
 def load_data(df:pd.DataFrame):
-    db_path = os.getenv("sqlite")
-    db_url = "sqlite:///" + os.path.abspath(db_path)
+    db_path = os.getenv("sqlite", "week9_demo/mmdt.db")
+    db_url = os.path.abspath(db_path)
+    # db_url = "sqlite:///" + os.path.abspath(db_path)
     print(f"Db url - {db_url}")
     engine = create_engine(db_url)
     df.to_sql("covid_city_demo", engine, if_exists="replace", index=False)
